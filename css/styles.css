@@ -22,11 +22,20 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h1 {
     margin-left: 20px;
     font-size: 24px;
+}
+
+.logo {
+    height: 60px;
+    margin-left: 20px;
+    vertical-align: middle;
 }
 
 nav ul {
@@ -52,7 +61,7 @@ nav ul li a:hover {
 
 /* Conteúdo principal */
 .container {
-    margin-top: 80px;
+    margin-top: 100px;
     padding: 20px;
 }
 
@@ -135,5 +144,9 @@ a:hover {
 
     nav ul li a {
         font-size: 16px;
+    }
+
+    .logo {
+        height: 50px;
     }
 }
