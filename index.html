@@ -25,16 +25,25 @@
             padding: 0;
             display: flex;
             justify-content: center;
+            gap: 1.5rem;
         }
 
         nav ul li {
-            margin: 0 1rem;
+            margin: 0;
         }
 
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-weight: bold;
+            padding: 0.5rem 1rem;
+            background-color: #ff6600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #cc5200;
         }
 
         .container {
@@ -54,61 +63,12 @@
             color: #ff6600;
         }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        input, textarea, button {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #ff6600;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-        }
-
-        button:hover {
-            background-color: #cc5200;
-        }
-
         footer {
             background-color: #000000;
             color: #ffffff;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
-        }
-
-        .button-grid {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .button {
-            padding: 1rem 2rem;
-            background-color: #ff6600;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #cc5200;
         }
 
         a {
@@ -127,9 +87,10 @@
     <h1>Landing Page - Operations Department</h1>
     <nav>
         <ul>
-            <li><a href="#info">General Information</a></li>
-            <li><a href="#form">Submit Report</a></li>
-            <li><a href="#links">Documentation</a></li>
+            <li><a href="operations.html">Operations</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
         </ul>
     </nav>
 </header>
@@ -138,39 +99,6 @@
     <section class="section" id="info">
         <h2>What the Operations Department Does</h2>
         <p>Our department ensures the safe, efficient, and compliant operation of aircraft, focusing on training, safety, and maintenance to support mission success.</p>
-    </section>
-
-    <!-- Quick Access Buttons -->
-    <section class="section">
-        <h2>Quick Access</h2>
-        <div class="button-grid">
-            <a href="operations.html" class="button">Operations</a>
-            <a href="training.html" class="button">Training</a>
-            <a href="safety.html" class="button">Safety</a>
-            <a href="maintenance.html" class="button">Maintenance</a>
-        </div>
-    </section>
-
-    <section class="section" id="form">
-        <h2>Submit Flight Report</h2>
-        <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" method="post" target="_blank">
-            <div class="form-group">
-                <label for="operator">Operator Name</label>
-                <input type="text" id="operator" name="operator" required>
-            </div>
-
-            <div class="form-group">
-                <label for="aircraft">Aircraft Used</label>
-                <input type="text" id="aircraft" name="aircraft" required>
-            </div>
-
-            <div class="form-group">
-                <label for="observations">Observations or Issues Detected</label>
-                <textarea id="observations" name="observations" rows="4" required></textarea>
-            </div>
-
-            <button type="submit">Submit Report</button>
-        </form>
     </section>
 
     <section class="section" id="links">
