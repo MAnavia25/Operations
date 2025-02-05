@@ -90,6 +90,27 @@
             margin-top: 2rem;
         }
 
+        .button-grid {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #cc5200;
+        }
+
         a {
             color: #ff6600;
             text-decoration: none;
@@ -114,13 +135,22 @@
 </header>
 
 <div class="container">
-    <!-- General Information Section -->
     <section class="section" id="info">
-        <h2>General Information</h2>
-        <p>Here you can quickly access relevant information about ongoing operations, aircraft conditions, and more.</p>
+        <h2>What the Operations Department Does</h2>
+        <p>Our department ensures the safe, efficient, and compliant operation of aircraft, focusing on training, safety, and maintenance to support mission success.</p>
     </section>
 
-    <!-- Report Submission Form -->
+    <!-- Quick Access Buttons -->
+    <section class="section">
+        <h2>Quick Access</h2>
+        <div class="button-grid">
+            <a href="operations.html" class="button">Operations</a>
+            <a href="training.html" class="button">Training</a>
+            <a href="safety.html" class="button">Safety</a>
+            <a href="maintenance.html" class="button">Maintenance</a>
+        </div>
+    </section>
+
     <section class="section" id="form">
         <h2>Submit Flight Report</h2>
         <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" method="post" target="_blank">
@@ -143,7 +173,6 @@
         </form>
     </section>
 
-    <!-- Documentation Links -->
     <section class="section" id="links">
         <h2>Documentation and Quick Access</h2>
         <ul>
