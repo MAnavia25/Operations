@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Department - Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0044cc;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0044cc;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003399;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Landing Page - Operations Department</h1>
+    <nav>
+        <ul>
+            <li><a href="#info">General Information</a></li>
+            <li><a href="#form">Submit Report</a></li>
+            <li><a href="#links">Documentation</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- General Information Section -->
+    <section class="section" id="info">
+        <h2>General Information</h2>
+        <p>Here you can quickly access relevant information about ongoing operations, aircraft conditions, and more.</p>
+    </section>
+
+    <!-- Report Submission Form -->
+    <section class="section" id="form">
+        <h2>Submit Flight Report</h2>
+        <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform" method="post" target="_blank">
+            <div class="form-group">
+                <label for="operator">Operator Name</label>
+                <input type="text" id="operator" name="operator" required>
+            </div>
+
+            <div class="form-group">
+                <label for="aircraft">Aircraft Used</label>
+                <input type="text" id="aircraft" name="aircraft" required>
+            </div>
+
+            <div class="form-group">
+                <label for="observations">Observations or Issues Detected</label>
+                <textarea id="observations" name="observations" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Submit Report</button>
+        </form>
+    </section>
+
+    <!-- Documentation Links -->
+    <section class="section" id="links">
+        <h2>Documentation and Quick Access</h2>
+        <ul>
+            <li><a href="https://drive.google.com/YOUR_LINK" target="_blank">Manuals and Procedures</a></li>
+            <li><a href="https://drive.google.com/YOUR_LINK" target="_blank">Previous Flight Reports</a></li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Operations Department - ANAVIA</p>
+</footer>
+
+</body>
+</html>
