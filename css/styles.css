@@ -186,3 +186,35 @@ nav ul.active li ul.submenu li {
         padding: 8px;
     }
 }
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+#back-to-top:hover {
+    background-color: #e69500;
+}
+
+nav ul.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav ul li ul.submenu.open {
+    display: block;
+}
+
+nav ul li ul.submenu {
+    display: none;
+}
+
