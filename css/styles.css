@@ -46,27 +46,62 @@ header h1 {
     white-space: nowrap; /* Garante que o texto do título não quebra */
 }
 
-/* Navegação */
+/* Navegação principal */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    flex-grow: 1; /* Faz com que o menu ocupe o espaço disponível */
+    flex-grow: 1;
     margin-left: auto;
+    position: relative;
 }
 
 nav ul li {
     margin-left: 20px;
+    position: relative;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 18px;
+    padding: 10px 15px;
+    display: block;
 }
 
 nav ul li a:hover {
-    color: #FFA500;
+    background-color: #FFA500;
+    border-radius: 5px;
+}
+
+/* Estilo do dropdown */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333333;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    width: 200px;
+}
+
+nav ul li ul li a {
+    padding: 10px;
+    color: #ffffff;
+}
+
+nav ul li ul li a:hover {
+    background-color: #FFA500;
 }
 
 /* Conteúdo principal */
