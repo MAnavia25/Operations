@@ -91,14 +91,24 @@
 
     // Expansão dos submenus no mobile
     document.querySelectorAll('nav ul li > a').forEach(item => {
-        item.addEventListener('click', function (e) {
-            const submenu = this.nextElementSibling;
-            if (submenu && submenu.classList.contains('submenu')) {
-                e.preventDefault(); // Impede a navegação direta no mobile
-                submenu.classList.toggle('open');
-            }
-        });
+    item.addEventListener('click', function (e) {
+        const submenu = this.nextElementSibling;
+
+        if (submenu && submenu.classList.contains('submenu')) {
+            e.preventDefault();
+
+            // Fecha todos os outros submenus abertos
+            document.querySelectorAll('nav ul li ul.submenu.open').forEach(openSubmenu => {
+                if (openSubmenu !== submenu) {
+                    openSubmenu.classList.remove('open');
+                }
+            });
+
+            // Alterna o submenu atual
+            submenu.classList.toggle('open');
+        }
     });
+});
 
     // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
