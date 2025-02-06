@@ -124,6 +124,11 @@
         list-style: none;
         padding: 0;
         margin: 0;
+        display: none; /* Ocultar por padrão no mobile */
+        flex-direction: column;
+    }
+
+    nav ul.active {
         display: flex;
     }
 
@@ -159,6 +164,16 @@
 
     nav ul li ul.submenu li a:hover {
         background-color: #FFA500;
+    }
+
+    @media (min-width: 768px) {
+        nav ul {
+            display: flex; /* Mostrar normalmente no desktop */
+        }
+
+        .menu-toggle {
+            display: none;
+        }
     }
 </style>
 
