@@ -87,13 +87,13 @@ nav ul li ul.submenu {
 }
 
 nav ul li ul.submenu li {
-    padding: 12px 20px; /* Espaçamento interno maior */
+    padding: 12px 20px;
     text-align: left;
-    border-bottom: 1px solid #444; /* Linha divisória entre itens */
+    border-bottom: 1px solid #444;
 }
 
 nav ul li ul.submenu li:last-child {
-    border-bottom: none; /* Remove a linha no último item */
+    border-bottom: none;
 }
 
 nav ul li ul.submenu li a {
@@ -103,7 +103,7 @@ nav ul li ul.submenu li a {
 }
 
 nav ul li ul.submenu li a i {
-    margin-right: 8px; /* Espaçamento entre ícone e texto */
+    margin-right: 8px;
 }
 
 nav ul li ul.submenu li a:hover {
@@ -236,4 +236,14 @@ nav ul li ul.submenu.open {
 
 nav ul li ul.submenu {
     display: none;
+}
+
+/* Footer estilizado */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-top: 2px solid #444;
+    font-size: 16px;
+    color: #333;
 }
