@@ -110,24 +110,25 @@ nav ul li ul.submenu li a:hover {
 nav ul.active {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     position: fixed;
-    top: 70px;
+    top: 0;
     left: 0;
     background-color: #000000;
-    padding: 10px 0;
     height: 100vh;
+    padding: 20px 0;
+    text-align: center;
     overflow-y: auto;
 }
 
-/* Redução do espaçamento entre itens no mobile */
 nav ul li {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 nav ul li a {
     padding: 10px;
-    text-align: center;
+    font-size: 20px;
 }
 
 /* Conteúdo principal */
@@ -184,19 +185,6 @@ footer {
 
     nav ul {
         display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul li ul.submenu {
-        position: static;
-        display: none;
-        width: 100%;
-        background-color: #333333;
-    }
-
-    nav ul li:hover ul.submenu {
-        display: block;
     }
 
     .container {
