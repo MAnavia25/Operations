@@ -83,18 +83,22 @@
 </footer>
 
 <script>
-   function toggleMenu() {
-    document.querySelector('nav ul').classList.toggle('active');
-}
+    function toggleMenu() {
+        document.querySelector('nav ul').classList.toggle('active');
+    }
 
-document.querySelectorAll('nav ul li').forEach(item => {
-    item.addEventListener('click', event => {
-        if (item.querySelector('.submenu')) {
-            event.stopPropagation();
-            item.querySelector('.submenu').classList.toggle('open');
-        }
+    document.getElementById('mobile-menu').addEventListener('click', toggleMenu);
+
+    // Expansão dos submenus no mobile
+    document.querySelectorAll('nav ul li > a').forEach(item => {
+        item.addEventListener('click', function (e) {
+            const submenu = this.nextElementSibling;
+            if (submenu && submenu.classList.contains('submenu')) {
+                e.preventDefault(); // Impede a navegação direta no mobile
+                submenu.classList.toggle('open');
+            }
+        });
     });
-});
 
     // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
