@@ -17,7 +17,7 @@
     <h1>Operations Department</h1>
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     <nav>
-        <ul>
+        <ul id="nav-list">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li>
                 <a href="operations.html"><i class="fas fa-cogs"></i> Operations</a>
@@ -84,7 +84,8 @@
 
 <script>
     function toggleMenu() {
-        document.querySelector('nav ul').classList.toggle('active');
+        const navList = document.getElementById('nav-list');
+        navList.classList.toggle('active');
     }
 
     const backToTopButton = document.getElementById('back-to-top');
