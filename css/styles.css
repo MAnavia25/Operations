@@ -11,12 +11,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    padding-top: 90px; /* Ajustado para compensar o header fixo */
-}
-
-/* Espaço para o conteúdo começar abaixo do header */
-.container {
-    padding: 20px;
+    padding-top: 100px; /* Ajustado para compensar o header fixo */
 }
 
 /* Cabeçalho */
@@ -177,7 +172,7 @@ nav ul.active li ul.submenu li {
     }
 
     .container {
-        padding: 10px;
+        padding: 15px;
     }
 }
 
@@ -204,7 +199,7 @@ nav ul.active li ul.submenu li {
     }
 
     .container {
-        padding: 8px;
+        padding: 10px;
     }
 }
 
@@ -233,3 +228,4 @@ nav ul li ul.submenu.open {
 nav ul li ul.submenu {
     display: none;
 }
+
