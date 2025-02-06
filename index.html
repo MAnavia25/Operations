@@ -12,7 +12,7 @@
 <header>
     <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
     <h1>Operations Department</h1>
-    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
         <ul>
             <li>
@@ -77,12 +77,9 @@
 </footer>
 
 <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.querySelector('nav ul');
-
-    mobileMenu.addEventListener('click', () => {
-        navList.classList.toggle('open');
-    });
+    function toggleMenu() {
+        document.querySelector('nav ul').classList.toggle('active');
+    }
 </script>
 
 </body>
