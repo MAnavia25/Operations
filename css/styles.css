@@ -28,11 +28,6 @@ header {
 }
 
 /* Logotipo e Título */
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
 .logo {
     height: 60px;
     padding: 5px;
@@ -43,7 +38,14 @@ header {
 
 header h1 {
     font-size: 24px;
-    white-space: nowrap; /* Garante que o texto do título não quebra */
+    white-space: nowrap;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
 }
 
 /* Navegação principal */
@@ -79,13 +81,12 @@ nav ul li ul {
     display: none;
     position: absolute;
     top: 100%;
-    right: 0; /* Alinha o dropdown à direita */
+    left: 0;
     background-color: #333333;
     padding: 0;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    min-width: 220px; /* Garante espaço suficiente */
 }
 
 nav ul li:hover ul {
@@ -93,7 +94,7 @@ nav ul li:hover ul {
 }
 
 nav ul li ul li {
-    width: 100%;
+    width: 200px;
 }
 
 nav ul li ul li a {
@@ -103,6 +104,14 @@ nav ul li ul li a {
 
 nav ul li ul li a:hover {
     background-color: #FFA500;
+}
+
+/* Estilo ativo para o menu mobile */
+nav ul.active {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    background-color: #000000;
 }
 
 /* Conteúdo principal */
@@ -151,41 +160,14 @@ footer {
     text-align: center;
 }
 
-/* Links de texto */
-a {
-    color: #FFA500;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para listas dentro das seções */
-.section ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.section ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
 /* Layout responsivo */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        height: 50px;
-        margin-bottom: 10px;
+    .menu-toggle {
+        display: block;
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -195,13 +177,8 @@ a:hover {
         margin: 5px 0;
     }
 
-    nav ul li a {
-        font-size: 16px;
-    }
-
     .container {
         padding: 10px;
-        margin-top: 120px; /* Adiciona espaço para o header fixo */
     }
 
     header h1 {
