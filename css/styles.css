@@ -32,8 +32,7 @@ header {
 .logo {
     height: 60px;
     padding: 5px;
-    border: 2px solid #FFA500;
-    border-radius: 5px;
+    border: none; /* Remove a borda */
     margin-right: 10px;
 }
 
