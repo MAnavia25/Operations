@@ -17,7 +17,7 @@
     <h1>Operations Department</h1>
     <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     <nav>
-        <ul id="nav-list">
+        <ul id="main-menu">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li>
                 <a href="operations.html"><i class="fas fa-cogs"></i> Operations</a>
@@ -84,10 +84,19 @@
 
 <script>
     function toggleMenu() {
-        const navList = document.getElementById('nav-list');
-        navList.classList.toggle('active');
+        document.getElementById('main-menu').classList.toggle('active');
     }
 
+    document.querySelectorAll('nav ul li').forEach(item => {
+        item.addEventListener('click', event => {
+            if (item.querySelector('.submenu')) {
+                event.stopPropagation(); 
+                item.querySelector('.submenu').classList.toggle('open');
+            }
+        });
+    });
+
+    // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
 
     window.onscroll = function () {
@@ -104,53 +113,21 @@
 </script>
 
 <style>
-    /* Estilização corrigida para o menu */
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    nav ul li {
-        position: relative;
-    }
-
-    nav ul li a {
-        color: #ffffff;
-        padding: 10px 15px;
-        text-decoration: none;
-    }
-
-    nav ul li:hover > .submenu {
-        display: block;
-    }
-
-    .submenu {
-        display: none;
-        position: absolute;
-        background-color: #333;
-        padding: 10px;
-        border-radius: 5px;
-        top: 100%;
-        left: 0;
-    }
-
-    .submenu li {
-        padding: 5px 0;
-    }
-
     #back-to-top {
         position: fixed;
         bottom: 20px;
         right: 20px;
         background-color: #FFA500;
         color: white;
+        border: none;
         padding: 10px;
         border-radius: 50%;
-        display: none;
         cursor: pointer;
+        display: none;
+    }
+
+    #back-to-top:hover {
+        background-color: #e69500;
     }
 </style>
 
