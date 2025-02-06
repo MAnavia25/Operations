@@ -11,7 +11,12 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    padding-top: 100px; /* Ajustado para compensar o header fixo */
+}
+
+/* Espaço dinâmico ajustado para compensar o header fixo */
+.container {
+    padding: 20px;
+    padding-top: 100px; /* Ajustado para evitar sobreposição */
 }
 
 /* Cabeçalho */
@@ -38,11 +43,6 @@ header {
     border: 2px solid #FFA500;
     border-radius: 5px;
     margin-right: 10px;
-}
-
-/* Espaço para o conteúdo começar abaixo do header */
-.container {
-    padding: 20px;
 }
 
 /* Botão do menu para mobile */
@@ -173,6 +173,7 @@ nav ul.active li ul.submenu li {
 
     .container {
         padding: 15px;
+        padding-top: 100px;
     }
 }
 
@@ -200,6 +201,7 @@ nav ul.active li ul.submenu li {
 
     .container {
         padding: 10px;
+        padding-top: 100px;
     }
 }
 
