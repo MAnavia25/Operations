@@ -201,6 +201,7 @@ a:hover {
 
     .container {
         padding: 10px;
+        margin-top: 120px; /* Adiciona espaço para o header fixo */
     }
 
     header h1 {
