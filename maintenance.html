@@ -19,22 +19,25 @@
         .section h2 {
             color: #FFA500;
         }
+
+        .highlight {
+            color: #FFA500;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="header-content">
-        <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
-        <h1>Maintenance</h1>
-    </div>
-    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
+    <h1>Maintenance</h1>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="operations.html">Operations</a>
-                <ul class="submenu">
+                <ul>
                     <li><a href="operations.html#flight-manual">Flight Manual</a></li>
                     <li><a href="operations.html#system-description">System Description</a></li>
                     <li><a href="operations.html#flight-log">Flight Log</a></li>
@@ -45,7 +48,7 @@
             </li>
             <li>
                 <a href="training.html">Training</a>
-                <ul class="submenu">
+                <ul>
                     <li><a href="training.html#training-manual">Training Manual</a></li>
                     <li><a href="training.html#training-programs">Training Programs</a></li>
                     <li><a href="training.html#reports-assessments">Reports and Assessments</a></li>
@@ -54,7 +57,7 @@
             </li>
             <li>
                 <a href="safety.html">Safety</a>
-                <ul class="submenu">
+                <ul>
                     <li><a href="safety.html#safety-management-manual">Safety Management Manual</a></li>
                     <li><a href="safety.html#compliance-manual">Compliance Manual</a></li>
                     <li><a href="safety.html#ftl-policy">FTL Policy</a></li>
@@ -63,7 +66,7 @@
             </li>
             <li>
                 <a href="maintenance.html">Maintenance</a>
-                <ul class="submenu">
+                <ul>
                     <li><a href="#maintenance-manual">Maintenance Manual</a></li>
                     <li><a href="#maintenance-logs">Maintenance Logs</a></li>
                     <li><a href="#configuration-report">Configuration Report</a></li>
@@ -77,22 +80,22 @@
 <div class="container">
     <section id="maintenance-manual" class="section">
         <h2>Maintenance Manual</h2>
-        <p>This section provides guidelines and procedures for scheduled and unscheduled maintenance activities.</p>
+        <p>This section provides guidelines and procedures for <span class="highlight">scheduled</span> and <span class="highlight">unscheduled maintenance</span> activities, ensuring operational readiness.</p>
     </section>
 
     <section id="maintenance-logs" class="section">
         <h2>Maintenance Logs</h2>
-        <p>Access records of past maintenance, inspections, and repairs conducted on all fleet equipment.</p>
+        <p>Access records of past maintenance, <span class="highlight">inspections</span>, and <span class="highlight">repairs</span> conducted on all fleet equipment for full operational traceability.</p>
     </section>
 
     <section id="configuration-report" class="section">
         <h2>Configuration Report</h2>
-        <p>Details of current configurations, modifications, and updates to the aircraft and its components.</p>
+        <p>Details of current <span class="highlight">configurations</span>, <span class="highlight">modifications</span>, and updates to the aircraft and its critical components.</p>
     </section>
 
     <section id="fleet-management" class="section">
         <h2>Fleet Management</h2>
-        <p>Overview of the entire fleet, including status, availability, and upcoming maintenance schedules.</p>
+        <p>Overview of the entire fleet, including <span class="highlight">status</span>, <span class="highlight">availability</span>, and upcoming <span class="highlight">maintenance schedules</span> to optimize operational planning.</p>
     </section>
 </div>
 
@@ -101,9 +104,12 @@
 </footer>
 
 <script>
-    function toggleMenu() {
-        document.querySelector('nav ul').classList.toggle('active');
-    }
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('nav ul');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
 </script>
 
 </body>
