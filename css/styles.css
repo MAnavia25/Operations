@@ -87,6 +87,7 @@ nav ul li ul {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    min-width: 220px; /* Largura ajustada */
 }
 
 nav ul li:hover ul {
@@ -94,7 +95,7 @@ nav ul li:hover ul {
 }
 
 nav ul li ul li {
-    width: 200px;
+    width: 100%;
 }
 
 nav ul li ul li a {
@@ -108,7 +109,7 @@ nav ul li ul li a:hover {
 
 /* Estilo ativo para o menu mobile */
 nav ul.active {
-    display: block;
+    display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #000000;
@@ -116,7 +117,7 @@ nav ul.active {
 
 /* Conteúdo principal */
 .container {
-    margin-top: 100px;
+    margin-top: 120px; /* Ajuste para evitar sobreposição */
     padding: 20px;
 }
 
