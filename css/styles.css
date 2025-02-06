@@ -131,6 +131,22 @@ nav ul li a {
     font-size: 20px;
 }
 
+/* Ajuste para links do menu mobile */
+nav ul li ul.submenu {
+    position: relative;
+    display: none;
+    background-color: #222;
+}
+
+nav ul.active li ul.submenu {
+    display: block;
+    margin-top: 10px;
+}
+
+nav ul.active li ul.submenu li {
+    padding: 5px 15px;
+}
+
 /* Conteúdo principal */
 .container {
     margin-top: 120px;
