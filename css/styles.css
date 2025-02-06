@@ -13,12 +13,6 @@ body {
     line-height: 1.6;
 }
 
-/* Espaço dinâmico ajustado para compensar o header fixo */
-.container {
-    padding: 20px;
-    padding-top: 100px; /* Ajustado para evitar sobreposição */
-}
-
 /* Cabeçalho */
 header {
     background-color: #000000;
@@ -43,6 +37,12 @@ header {
     border: 2px solid #FFA500;
     border-radius: 5px;
     margin-right: 10px;
+}
+
+/* Espaço dinâmico ajustado abaixo do header */
+.container {
+    margin-top: 80px; /* Igual à altura do header */
+    padding: 20px;
 }
 
 /* Botão do menu para mobile */
@@ -172,8 +172,8 @@ nav ul.active li ul.submenu li {
     }
 
     .container {
+        margin-top: 90px; /* Ajustado para evitar sobreposição no mobile */
         padding: 15px;
-        padding-top: 100px;
     }
 }
 
@@ -200,8 +200,8 @@ nav ul.active li ul.submenu li {
     }
 
     .container {
+        margin-top: 90px;
         padding: 10px;
-        padding-top: 100px;
     }
 }
 
