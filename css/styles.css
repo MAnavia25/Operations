@@ -17,14 +17,15 @@ body {
 header {
     background-color: #000000;
     color: #ffffff;
-    padding: 20px;
+    padding: 15px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* Logotipo e Título */
@@ -33,14 +34,16 @@ header {
     padding: 5px;
     border: 2px solid #FFA500;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 header h1 {
     font-size: 24px;
     text-align: center;
+    flex: 1;
 }
 
+/* Botão do menu para mobile */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -52,12 +55,13 @@ header h1 {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    margin: 0;
+    justify-content: flex-end;
+    margin-left: auto;
 }
 
 nav ul li {
     position: relative;
+    padding: 0 10px;
 }
 
 nav ul li a {
@@ -76,10 +80,14 @@ nav ul li a:hover {
 /* Estilo do dropdown */
 nav ul li ul.submenu {
     display: none;
-    position: relative;
+    position: absolute;
+    top: 100%;
+    left: 0;
     background-color: #333333;
     border-radius: 5px;
-    width: 100%;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
 }
 
 nav ul li:hover ul.submenu {
@@ -102,15 +110,60 @@ nav ul li ul.submenu li a:hover {
 nav ul.active {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    width: 100%;
+    position: fixed;
     top: 70px;
     left: 0;
-    width: 100%;
     background-color: #000000;
-    padding: 10px;
+    padding: 20px;
     height: 100vh;
     overflow-y: auto;
-    z-index: 1000;
+}
+
+/* Conteúdo principal */
+.container {
+    margin-top: 120px;
+    padding: 20px;
+}
+
+/* Seções */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFA500;
+    display: inline-block;
+}
+
+.section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.button {
+    display: inline-block;
+    background-color: #FFA500;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: #e69500;
+}
+
+/* Rodapé */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
 }
 
 /* Layout responsivo */
@@ -121,15 +174,23 @@ nav ul.active {
 
     nav ul {
         display: none;
+        flex-direction: column;
+        width: 100%;
     }
 
     nav ul li ul.submenu {
+        position: static;
         display: none;
-        padding-left: 15px;
+        width: 100%;
+        background-color: #333333;
     }
 
     nav ul li:hover ul.submenu {
         display: block;
+    }
+
+    nav ul li {
+        padding: 10px 0;
     }
 
     .container {
