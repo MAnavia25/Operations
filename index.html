@@ -15,7 +15,7 @@
 <header>
     <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
     <h1>Operations Department</h1>
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">&#9776;</div>
     <nav>
         <ul id="main-menu">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -84,18 +84,21 @@
 
 <script>
     function toggleMenu() {
-        document.querySelector('nav ul').classList.toggle('active');
+        document.getElementById('main-menu').classList.toggle('active');
     }
 
-    document.querySelectorAll('nav ul li a').forEach(link => {
+    // Handle submenu expansion on mobile
+    document.querySelectorAll('#main-menu > li > a').forEach(link => {
         link.addEventListener('click', event => {
-            if (link.parentElement.querySelector('.submenu')) {
+            const submenu = link.nextElementSibling;
+            if (submenu && submenu.classList.contains('submenu')) {
                 event.preventDefault();
-                link.parentElement.querySelector('.submenu').classList.toggle('open');
+                submenu.classList.toggle('open');
             }
         });
     });
 
+    // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
 
     window.onscroll = function () {
@@ -127,6 +130,16 @@
 
     #back-to-top:hover {
         background-color: #e69500;
+    }
+
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav ul li ul.submenu.open {
+        display: block;
     }
 </style>
 
