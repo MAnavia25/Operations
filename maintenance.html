@@ -25,6 +25,33 @@
             color: #FFA500;
             font-weight: bold;
         }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        nav ul.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        nav ul {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -32,9 +59,9 @@
 <header>
     <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
     <h1>Maintenance</h1>
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">&#9776;</div>
     <nav>
-        <ul>
+        <ul id="main-menu">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li>
                 <a href="operations.html"><i class="fas fa-cogs"></i> Operations</a>
@@ -108,7 +135,7 @@
 
 <script>
     function toggleMenu() {
-        document.querySelector('nav ul').classList.toggle('active');
+        document.getElementById('main-menu').classList.toggle('active');
     }
 
     const backToTopButton = document.getElementById('back-to-top');
