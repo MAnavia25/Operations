@@ -26,6 +26,7 @@
 <header>
     <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
     <h1>Safety</h1>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -96,6 +97,15 @@
 <footer>
     <p>&copy; 2025 Operation Department - ANAVIA</p>
 </footer>
+
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('nav ul');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
+</script>
 
 </body>
 </html>
