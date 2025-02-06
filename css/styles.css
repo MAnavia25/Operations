@@ -1,9 +1,17 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Corpo do site */
 body {
     font-family: 'Montserrat', Arial, sans-serif;
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
+    padding-top: 80px; /* Compensa o header fixo */
 }
 
 /* Cabeçalho */
@@ -19,7 +27,7 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: 80px; /* Altura consistente */
+    height: 80px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -34,7 +42,6 @@ header {
 
 /* Espaço para o conteúdo começar abaixo do header */
 .container {
-    margin-top: 80px; /* Espaço correspondente à altura do header */
     padding: 20px;
 }
 
@@ -64,7 +71,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Mostrar submenu no hover */
+/* Mostrar submenu no hover no desktop */
 nav ul li:hover > ul.submenu {
     display: block;
 }
@@ -147,16 +154,25 @@ nav ul.active li ul.submenu li {
         display: flex;
     }
 
-    .container {
-        padding: 10px;
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .logo {
+        height: 50px;
+        margin-bottom: 10px;
     }
 
     header h1 {
         font-size: 20px;
+        text-align: center;
     }
 
-    .section h2 {
-        font-size: 18px;
+    .container {
+        padding: 10px;
     }
 }
 
@@ -187,6 +203,7 @@ nav ul.active li ul.submenu li {
     }
 }
 
+/* Botão de voltar ao topo */
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -204,12 +221,6 @@ nav ul.active li ul.submenu li {
     background-color: #e69500;
 }
 
-nav ul.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 nav ul li ul.submenu.open {
     display: block;
 }
@@ -217,4 +228,3 @@ nav ul li ul.submenu.open {
 nav ul li ul.submenu {
     display: none;
 }
-
