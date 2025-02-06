@@ -17,7 +17,7 @@
         <ul>
             <li>
                 <a href="operations.html">Operations</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="operations.html#flight-manual">Flight Manual</a></li>
                     <li><a href="operations.html#system-description">System Description</a></li>
                     <li><a href="operations.html#flight-log">Flight Log</a></li>
@@ -28,7 +28,7 @@
             </li>
             <li>
                 <a href="training.html">Training</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="training.html#training-manual">Training Manual</a></li>
                     <li><a href="training.html#training-programs">Training Programs</a></li>
                     <li><a href="training.html#reports-assessments">Reports and Assessments</a></li>
@@ -37,7 +37,7 @@
             </li>
             <li>
                 <a href="safety.html">Safety</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="safety.html#safety-management-manual">Safety Management Manual</a></li>
                     <li><a href="safety.html#compliance-manual">Compliance Manual</a></li>
                     <li><a href="safety.html#ftl-policy">FTL Policy</a></li>
@@ -46,7 +46,7 @@
             </li>
             <li>
                 <a href="maintenance.html">Maintenance</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="maintenance.html#maintenance-manual">Maintenance Manual</a></li>
                     <li><a href="maintenance.html#maintenance-logs">Maintenance Logs</a></li>
                     <li><a href="maintenance.html#configuration-report">Configuration Report</a></li>
@@ -78,8 +78,7 @@
 
 <script>
     function toggleMenu() {
-        const nav = document.querySelector('nav ul');
-        nav.classList.toggle('active');
+        document.querySelector('nav ul').classList.toggle('active');
     }
 
     // Fechar o menu ao selecionar um link
