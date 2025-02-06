@@ -115,9 +115,19 @@ nav ul.active {
     top: 70px;
     left: 0;
     background-color: #000000;
-    padding: 20px;
+    padding: 10px 0;
     height: 100vh;
     overflow-y: auto;
+}
+
+/* Redução do espaçamento entre itens no mobile */
+nav ul li {
+    padding: 5px 0;
+}
+
+nav ul li a {
+    padding: 10px;
+    text-align: center;
 }
 
 /* Conteúdo principal */
@@ -187,10 +197,6 @@ footer {
 
     nav ul li:hover ul.submenu {
         display: block;
-    }
-
-    nav ul li {
-        padding: 10px 0;
     }
 
     .container {
