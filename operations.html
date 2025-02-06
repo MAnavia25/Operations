@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operations</title>
+    <title>Operations - Operation Department</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
@@ -24,26 +24,28 @@
 <body>
 
 <header>
-    <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
-    <h1>Operations</h1>
-    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <div class="header-content">
+        <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
+        <h1>Operations</h1>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="operations.html">Operations</a>
-                <ul>
-                    <li><a href="#flight-manual">Flight Manual</a></li>
-                    <li><a href="#system-description">System Description</a></li>
-                    <li><a href="#flight-log">Flight Log</a></li>
-                    <li><a href="#test-validations">Test & Validations</a></li>
-                    <li><a href="#flight-tools">Flight Tools</a></li>
-                    <li><a href="#documents">Documents</a></li>
+                <ul class="submenu">
+                    <li><a href="operations.html#flight-manual">Flight Manual</a></li>
+                    <li><a href="operations.html#system-description">System Description</a></li>
+                    <li><a href="operations.html#flight-log">Flight Log</a></li>
+                    <li><a href="operations.html#test-validations">Test & Validations</a></li>
+                    <li><a href="operations.html#flight-tools">Flight Tools</a></li>
+                    <li><a href="operations.html#documents">Documents</a></li>
                 </ul>
             </li>
             <li>
                 <a href="training.html">Training</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="training.html#training-manual">Training Manual</a></li>
                     <li><a href="training.html#training-programs">Training Programs</a></li>
                     <li><a href="training.html#reports-assessments">Reports and Assessments</a></li>
@@ -52,7 +54,7 @@
             </li>
             <li>
                 <a href="safety.html">Safety</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="safety.html#safety-management-manual">Safety Management Manual</a></li>
                     <li><a href="safety.html#compliance-manual">Compliance Manual</a></li>
                     <li><a href="safety.html#ftl-policy">FTL Policy</a></li>
@@ -61,7 +63,7 @@
             </li>
             <li>
                 <a href="maintenance.html">Maintenance</a>
-                <ul>
+                <ul class="submenu">
                     <li><a href="maintenance.html#maintenance-manual">Maintenance Manual</a></li>
                     <li><a href="maintenance.html#maintenance-logs">Maintenance Logs</a></li>
                     <li><a href="maintenance.html#configuration-report">Configuration Report</a></li>
@@ -105,16 +107,13 @@
 </div>
 
 <footer>
-    <p>&copy; 2025 Operations Department - ANAVIA</p>
+    <p>&copy; 2025 Operation Department - ANAVIA</p>
 </footer>
 
 <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.querySelector('nav ul');
-
-    mobileMenu.addEventListener('click', () => {
-        navList.classList.toggle('open');
-    });
+    function toggleMenu() {
+        document.querySelector('nav ul').classList.toggle('active');
+    }
 </script>
 
 </body>
