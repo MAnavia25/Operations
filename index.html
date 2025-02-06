@@ -87,30 +87,15 @@
         document.querySelector('nav ul').classList.toggle('active');
     }
 
-    document.getElementById('mobile-menu').addEventListener('click', toggleMenu);
-
-    // Expansão dos submenus no mobile
-    document.querySelectorAll('nav ul li > a').forEach(item => {
-    item.addEventListener('click', function (e) {
-        const submenu = this.nextElementSibling;
-
-        if (submenu && submenu.classList.contains('submenu')) {
-            e.preventDefault();
-
-            // Fecha todos os outros submenus abertos
-            document.querySelectorAll('nav ul li ul.submenu.open').forEach(openSubmenu => {
-                if (openSubmenu !== submenu) {
-                    openSubmenu.classList.remove('open');
-                }
-            });
-
-            // Alterna o submenu atual
-            submenu.classList.toggle('open');
-        }
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', event => {
+            if (link.parentElement.querySelector('.submenu')) {
+                event.preventDefault();
+                link.parentElement.querySelector('.submenu').classList.toggle('open');
+            }
+        });
     });
-});
 
-    // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
 
     window.onscroll = function () {
@@ -142,10 +127,6 @@
 
     #back-to-top:hover {
         background-color: #e69500;
-    }
-
-    .container {
-        margin-top: 150px;
     }
 </style>
 
