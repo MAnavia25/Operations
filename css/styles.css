@@ -120,8 +120,11 @@ nav ul.active {
 
 /* Estilo para submenus no mobile */
 nav ul.active li ul.submenu {
+    display: none;
+}
+
+nav ul.active li.open > ul.submenu {
     display: block;
-    margin-top: 10px;
 }
 
 nav ul li {
