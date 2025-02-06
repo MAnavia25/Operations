@@ -83,18 +83,18 @@
 </footer>
 
 <script>
-    function toggleMenu() {
-        document.getElementById('main-menu').classList.toggle('active');
-    }
+   function toggleMenu() {
+    document.querySelector('nav ul').classList.toggle('active');
+}
 
-    document.querySelectorAll('nav ul li').forEach(item => {
-        item.addEventListener('click', event => {
-            if (item.querySelector('.submenu')) {
-                event.stopPropagation(); 
-                item.querySelector('.submenu').classList.toggle('open');
-            }
-        });
+document.querySelectorAll('nav ul li').forEach(item => {
+    item.addEventListener('click', event => {
+        if (item.querySelector('.submenu')) {
+            event.stopPropagation();
+            item.querySelector('.submenu').classList.toggle('open');
+        }
     });
+});
 
     // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
