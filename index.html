@@ -84,18 +84,27 @@
 
 <script>
     function toggleMenu() {
-        document.getElementById('main-menu').classList.toggle('active');
-    }
+    document.getElementById('main-menu').classList.toggle('active');
+}
 
-    document.querySelectorAll('#main-menu > li > a').forEach(link => {
-        link.addEventListener('click', event => {
-            const submenu = link.nextElementSibling;
-            if (submenu && submenu.classList.contains('submenu')) {
-                event.preventDefault();
-                submenu.classList.toggle('open');
+document.querySelectorAll('#main-menu > li > a').forEach(link => {
+    link.addEventListener('click', event => {
+        const submenu = link.nextElementSibling;
+        
+        // Fechar outros submenus abertos
+        document.querySelectorAll('#main-menu .submenu.open').forEach(openSubmenu => {
+            if (openSubmenu !== submenu) {
+                openSubmenu.classList.remove('open');
             }
         });
+
+        // Toggle apenas no submenu clicado
+        if (submenu && submenu.classList.contains('submenu')) {
+            event.preventDefault();
+            submenu.classList.toggle('open');
+        }
     });
+});
 
     // Scroll behavior for back-to-top button
     const backToTopButton = document.getElementById('back-to-top');
