@@ -11,6 +11,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
+    padding-top: 80px; /* Compensa o header fixo */
 }
 
 /* Cabeçalho */
@@ -26,6 +27,7 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    height: 80px;
 }
 
 /* Logotipo e Título */
@@ -37,10 +39,9 @@ header {
     margin-right: 10px;
 }
 
-header h1 {
-    font-size: 24px;
-    text-align: center;
-    flex: 1;
+/* Ajuste de margem no conteúdo */
+.container {
+    padding: 20px;
 }
 
 /* Botão do menu para mobile */
