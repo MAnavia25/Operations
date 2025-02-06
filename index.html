@@ -87,7 +87,6 @@
         document.getElementById('main-menu').classList.toggle('active');
     }
 
-    // Handle submenu expansion on mobile
     document.querySelectorAll('#main-menu > li > a').forEach(link => {
         link.addEventListener('click', event => {
             const submenu = link.nextElementSibling;
@@ -140,6 +139,10 @@
 
     nav ul li ul.submenu.open {
         display: block;
+    }
+
+    nav ul li ul.submenu {
+        display: none;
     }
 </style>
 
