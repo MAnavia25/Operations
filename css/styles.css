@@ -11,6 +11,9 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Header + conteúdo dinâmico */
+    min-height: 100vh;
 }
 
 /* Cabeçalho */
@@ -18,14 +21,9 @@ header {
     background-color: #000000;
     color: #ffffff;
     padding: 15px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     height: 80px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -39,9 +37,8 @@ header {
     margin-right: 10px;
 }
 
-/* Espaço dinâmico ajustado abaixo do header */
+/* Espaço dinâmico para o conteúdo */
 .container {
-    margin-top: 80px; /* Igual à altura do header */
     padding: 20px;
 }
 
@@ -172,8 +169,7 @@ nav ul.active li ul.submenu li {
     }
 
     .container {
-        margin-top: 90px; /* Ajustado para evitar sobreposição no mobile */
-        padding: 15px;
+        padding: 10px;
     }
 }
 
@@ -200,7 +196,6 @@ nav ul.active li ul.submenu li {
     }
 
     .container {
-        margin-top: 90px;
         padding: 10px;
     }
 }
