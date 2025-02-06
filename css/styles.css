@@ -11,7 +11,12 @@ body {
     background-color: #ffffff;
     color: #000000;
     line-height: 1.6;
-    padding-top: 80px; /* Compensa o header fixo */
+    padding-top: 90px; /* Ajustado para compensar o header fixo */
+}
+
+/* Espaço para o conteúdo começar abaixo do header */
+.container {
+    padding: 20px;
 }
 
 /* Cabeçalho */
