@@ -87,11 +87,23 @@ nav ul li ul.submenu {
 }
 
 nav ul li ul.submenu li {
-    padding: 10px;
+    padding: 12px 20px; /* Espaçamento interno maior */
+    text-align: left;
+    border-bottom: 1px solid #444; /* Linha divisória entre itens */
+}
+
+nav ul li ul.submenu li:last-child {
+    border-bottom: none; /* Remove a linha no último item */
 }
 
 nav ul li ul.submenu li a {
-    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+nav ul li ul.submenu li a i {
+    margin-right: 8px; /* Espaçamento entre ícone e texto */
 }
 
 nav ul li ul.submenu li a:hover {
