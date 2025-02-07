@@ -3,118 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Operations, Training, Safety, and Maintenance for ANAVIA's UAV operations.">
-    <meta name="keywords" content="UAV, ANAVIA, Operations, Training, Safety, Maintenance, Drones">
-    <title>Operations Department</title>
+    <title>Operations Department - ANAVIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .section {
-            background-color: #f2f2f2;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 5px solid #FFA500;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .section h2 {
-            color: #FFA500;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.6/index.global.min.js"></script> <!-- Importa o FullCalendar -->
 </head>
 <body>
 
 <header>
-    <img src="images/Anavia-English-Colour.png" alt="ANAVIA Logo" class="logo">
+    <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
     <h1>Operations Department</h1>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
-        <ul id="main-menu">
+        <ul>
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li>
-                <a href="operations.html"><i class="fas fa-helicopter"></i> Operations</a>
-                <ul class="submenu">
-                    <li><a href="operations.html#flight-manual">Flight Manual</a></li>
-                    <li><a href="operations.html#system-description">System Description</a></li>
-                    <li><a href="operations.html#flight-log">Flight Log</a></li>
-                    <li><a href="operations.html#test-validations">Test & Validations</a></li>
-                    <li><a href="operations.html#flight-tools">Flight Tools</a></li>
-                    <li><a href="operations.html#documents">Documents</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="training.html"><i class="fas fa-book-open"></i> Training</a>
-                <ul class="submenu">
-                    <li><a href="training.html#training-manual">Training Manual</a></li>
-                    <li><a href="training.html#training-programs">Training Programs</a></li>
-                    <li><a href="training.html#reports-assessments">Reports and Assessments</a></li>
-                    <li><a href="training.html#courses-documents">Courses Documents</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="safety.html"><i class="fas fa-shield-alt"></i> Safety</a>
-                <ul class="submenu">
-                    <li><a href="safety.html#safety-management-manual">Safety Management Manual</a></li>
-                    <li><a href="safety.html#compliance-manual">Compliance Manual</a></li>
-                    <li><a href="safety.html#ftl-policy">FTL Policy</a></li>
-                    <li><a href="safety.html#safety-documents">Safety Documents</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="maintenance.html"><i class="fas fa-wrench"></i> Maintenance</a>
-                <ul class="submenu">
-                    <li><a href="maintenance.html#maintenance-manual">Maintenance Manual</a></li>
-                    <li><a href="maintenance.html#maintenance-logs">Maintenance Logs</a></li>
-                    <li><a href="maintenance.html#configuration-report">Configuration Report</a></li>
-                    <li><a href="maintenance.html#fleet-management">Fleet Management</a></li>
-                </ul>
-            </li>
+            <li><a href="operations.html"><i class="fas fa-helicopter"></i> Operations</a></li>
+            <li><a href="training.html"><i class="fas fa-book-open"></i> Training</a></li>
+            <li><a href="safety.html"><i class="fas fa-shield-alt"></i> Safety</a></li>
+            <li><a href="maintenance.html"><i class="fas fa-wrench"></i> Maintenance</a></li>
         </ul>
     </nav>
 </header>
 
 <div class="container">
-    <section class="section" id="info">
-        <h2>What the Operations Department Does</h2>
-        <p>Our department ensures the safe, efficient, and compliant operation of aircraft, focusing on training, safety, and maintenance to support mission success.</p>
+    <!-- Calendário -->
+    <section id="calendar-section">
+        <h2>Scheduled Operations</h2>
+        <div id="calendar"></div>
     </section>
 
-    <section class="section" id="links">
-        <h2>Documentation and Quick Access</h2>
-        <ul>
-            <li><a href="https://drive.google.com/YOUR_LINK" target="_blank">Manuals and Procedures</a></li>
-            <li><a href="https://drive.google.com/YOUR_LINK" target="_blank">Previous Flight Reports</a></li>
-        </ul>
+    <!-- Seção Book a Flight -->
+    <section id="book-flight">
+        <h2>Book a Flight</h2>
+        <button onclick="openForm()">✈️ Book Now</button>
+
+        <!-- Formulário em Modal -->
+        <div id="bookingForm" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeForm()">&times;</span>
+                <h3>Flight Booking Form</h3>
+                <form>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="date">Preferred Flight Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="details">Flight Details (Optional):</label>
+                    <textarea id="details" name="details" rows="4"></textarea>
+
+                    <button type="submit">Submit Booking</button>
+                </form>
+            </div>
+        </div>
     </section>
 </div>
 
-<button id="back-to-top" onclick="scrollToTop()">⬆️</button>
-
 <footer>
+    <hr>
     <p>&copy; 2025 Operations Department - ANAVIA</p>
 </footer>
 
 <script>
-    function toggleMenu() {
-        document.getElementById('main-menu').classList.toggle('active');
+    // Inicializar o FullCalendar
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: [
+                { title: 'Flight to Zurich', start: '2025-02-10' },
+                { title: 'Operational Training', start: '2025-02-15' },
+                { title: 'Maintenance Check', start: '2025-02-20' }
+            ]
+        });
+        calendar.render();
+    });
+
+    // Abrir e fechar o formulário modal
+    function openForm() {
+        document.getElementById('bookingForm').style.display = 'block';
     }
 
-    const backToTopButton = document.getElementById('back-to-top');
-
-    window.onscroll = function () {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    };
-
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function closeForm() {
+        document.getElementById('bookingForm').style.display = 'none';
     }
 </script>
+
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    #calendar-section {
+        margin: 20px 0;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    #book-flight {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #book-flight button {
+        background-color: #FFA500;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #book-flight button:hover {
+        background-color: #e69500;
+    }
+
+    /* Estilo do modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+        border-radius: 8px;
+    }
+
+    .modal-content h3 {
+        text-align: center;
+    }
+
+    .modal-content input, .modal-content textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .modal-content button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .modal-content button:hover {
+        background-color: #45a049;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
 
 </body>
 </html>
