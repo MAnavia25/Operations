@@ -12,7 +12,7 @@ body {
     color: #000000;
     line-height: 1.6;
     display: grid;
-    grid-template-rows: auto 1fr; /* Header + conteúdo dinâmico */
+    grid-template-rows: auto 1fr;
     min-height: 100vh;
 }
 
@@ -28,20 +28,18 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Logotipo e Título */
+/* Logotipo */
 .logo {
     height: 60px;
-    padding: 5px;
-    border: none; /* Remove a borda */
     margin-right: 10px;
 }
 
-/* Espaço dinâmico para o conteúdo */
+/* Container */
 .container {
     padding: 20px;
 }
 
-/* Botão do menu para mobile */
+/* Botão do menu mobile */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -49,12 +47,11 @@ header {
     color: #ffffff;
 }
 
-/* Navegação principal */
+/* Navegação */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    margin-left: auto;
 }
 
 nav ul li {
@@ -67,148 +64,69 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Mostrar submenu no hover no desktop */
-nav ul li:hover > ul.submenu {
-    display: block;
-}
-
-/* Submenu estilo */
 nav ul li ul.submenu {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
     background-color: #333;
-    border-radius: 5px;
     min-width: 200px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+}
+
+nav ul li:hover > ul.submenu {
+    display: block;
 }
 
 nav ul li ul.submenu li {
     padding: 12px 20px;
-    text-align: left;
     border-bottom: 1px solid #444;
 }
 
-nav ul li ul.submenu li:last-child {
-    border-bottom: none;
-}
-
 nav ul li ul.submenu li a {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-}
-
-nav ul li ul.submenu li a i {
-    margin-right: 8px;
+    color: white;
 }
 
 nav ul li ul.submenu li a:hover {
     background-color: #FFA500;
 }
 
-/* Menu ativo no mobile */
+/* Menu mobile */
 nav ul.active {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: #000000;
     height: 100vh;
-    padding: 20px 0;
-    text-align: center;
-    overflow-y: auto;
+    padding: 20px;
 }
 
-/* Estilo para submenus no mobile */
-nav ul.active li ul.submenu {
+/* Calendário */
+#calendar-section {
+    margin: 20px 0;
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Estilização do modal */
+.modal {
     display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-nav ul.active li.open > ul.submenu {
-    display: block;
-}
-
-nav ul li {
-    padding: 10px 0;
-}
-
-nav ul li a {
-    padding: 10px;
-    font-size: 20px;
-}
-
-/* Ajuste para links do menu mobile */
-nav ul.active li ul.submenu li {
-    padding: 5px 15px;
-}
-
-/* Exibir o botão do menu no mobile */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .logo {
-        height: 50px;
-        margin-bottom: 10px;
-    }
-
-    header h1 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .container {
-        padding: 10px;
-    }
-}
-
-/* Ajuste de largura e alinhamento no mobile */
-@media (max-width: 768px) {
-    nav ul.active li ul.submenu {
-        width: 100%;
-        margin-left: 0;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        height: 40px;
-    }
-
-    header h1 {
-        font-size: 18px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    .container {
-        padding: 10px;
-    }
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 8px;
 }
 
 /* Botão de voltar ao topo */
@@ -217,32 +135,14 @@ nav ul.active li ul.submenu li {
     bottom: 20px;
     right: 20px;
     background-color: #FFA500;
-    color: white;
-    border: none;
     padding: 10px;
     border-radius: 50%;
-    cursor: pointer;
     display: none;
 }
 
-#back-to-top:hover {
-    background-color: #e69500;
-}
-
-nav ul li ul.submenu.open {
-    display: block;
-}
-
-nav ul li ul.submenu {
-    display: none;
-}
-
-/* Footer estilizado */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #f2f2f2;
     border-top: 2px solid #444;
-    font-size: 16px;
-    color: #333;
 }
