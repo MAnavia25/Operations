@@ -12,7 +12,7 @@ body {
     color: #000000;
     line-height: 1.6;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr; /* Header + conteúdo dinâmico */
     min-height: 100vh;
 }
 
@@ -28,17 +28,21 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Logotipo e Título */
 .logo {
     height: 60px;
     padding: 5px;
-    border: none;
+    border: 2px solid #FFA500;
+    border-radius: 5px;
     margin-right: 10px;
 }
 
+/* Espaço dinâmico para o conteúdo */
 .container {
     padding: 20px;
 }
 
+/* Botão do menu para mobile */
 .menu-toggle {
     display: none;
     font-size: 30px;
@@ -46,6 +50,7 @@ header {
     color: #ffffff;
 }
 
+/* Navegação principal */
 nav ul {
     list-style: none;
     display: flex;
@@ -63,10 +68,12 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Mostrar submenu no hover no desktop */
 nav ul li:hover > ul.submenu {
     display: block;
 }
 
+/* Submenu estilo */
 nav ul li ul.submenu {
     display: none;
     position: absolute;
@@ -103,6 +110,7 @@ nav ul li ul.submenu li a:hover {
     background-color: #FFA500;
 }
 
+/* Menu ativo no mobile */
 nav ul.active {
     display: flex;
     flex-direction: column;
@@ -118,6 +126,7 @@ nav ul.active {
     overflow-y: auto;
 }
 
+/* Estilo para submenus no mobile */
 nav ul.active li ul.submenu {
     display: none;
 }
@@ -135,10 +144,12 @@ nav ul li a {
     font-size: 20px;
 }
 
+/* Ajuste para links do menu mobile */
 nav ul.active li ul.submenu li {
     padding: 5px 15px;
 }
 
+/* Exibir o botão do menu no mobile */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -174,6 +185,7 @@ nav ul.active li ul.submenu li {
     }
 }
 
+/* Ajuste de largura e alinhamento no mobile */
 @media (max-width: 768px) {
     nav ul.active li ul.submenu {
         width: 100%;
@@ -200,6 +212,7 @@ nav ul.active li ul.submenu li {
     }
 }
 
+/* Botão de voltar ao topo */
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -225,6 +238,7 @@ nav ul li ul.submenu {
     display: none;
 }
 
+/* Footer estilizado */
 footer {
     text-align: center;
     padding: 10px;
@@ -232,53 +246,4 @@ footer {
     border-top: 2px solid #444;
     font-size: 16px;
     color: #333;
-}
-
-/* Seção do calendário */
-#calendar-section {
-    margin-top: 20px;
-}
-
-#calendar {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.calendar-header {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.calendar-placeholder {
-    color: #777;
-    font-size: 18px;
-}
-
-/* Seção de reserva */
-#booking-section {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #FFA500;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #e69500;
 }
