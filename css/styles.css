@@ -1,94 +1,248 @@
-/* Estilo para o calendário */
-.calendar-section {
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do site */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Header + conteúdo dinâmico */
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Logotipo e Título */
+.logo {
+    height: 60px;
+    padding: 5px;
+    border: none; /* Remove a borda */
+    margin-right: 10px;
+}
+
+/* Espaço dinâmico para o conteúdo */
+.container {
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    max-width: 100%;
-    margin: 20px auto;
-    text-align: center;
 }
 
-/* Estilo do botão "Book a Flight" */
-#book-now {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #FFA500;
-    border: none;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-#book-now:hover {
-    background-color: #e69500;
-}
-
-/* Estilo do modal */
-.modal {
+/* Botão do menu para mobile */
+.menu-toggle {
     display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Navegação principal */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Mostrar submenu no hover no desktop */
+nav ul li:hover > ul.submenu {
+    display: block;
+}
+
+/* Submenu estilo */
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    border-radius: 5px;
+    min-width: 200px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+nav ul li ul.submenu li {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+nav ul li ul.submenu li:last-child {
+    border-bottom: none;
+}
+
+nav ul li ul.submenu li a {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+nav ul li ul.submenu li a i {
+    margin-right: 8px;
+}
+
+nav ul li ul.submenu li a:hover {
+    background-color: #FFA500;
+}
+
+/* Menu ativo no mobile */
+nav ul.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    overflow: auto;
+    background-color: #000000;
+    height: 100vh;
+    padding: 20px 0;
+    text-align: center;
+    overflow-y: auto;
 }
 
-.modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    max-width: 90%;
+/* Estilo para submenus no mobile */
+nav ul.active li ul.submenu {
+    display: none;
 }
 
-.modal-content h2 {
-    margin-bottom: 15px;
-}
-
-.modal-content form label {
+nav ul.active li.open > ul.submenu {
     display: block;
-    margin-bottom: 5px;
 }
 
-.modal-content form input,
-.modal-content form select,
-.modal-content form textarea {
-    width: 100%;
+nav ul li {
+    padding: 10px 0;
+}
+
+nav ul li a {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-size: 20px;
 }
 
-.modal-content form button {
+/* Ajuste para links do menu mobile */
+nav ul.active li ul.submenu li {
+    padding: 5px 15px;
+}
+
+/* Exibir o botão do menu no mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .logo {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Ajuste de largura e alinhamento no mobile */
+@media (max-width: 768px) {
+    nav ul.active li ul.submenu {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Botão de voltar ao topo */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #FFA500;
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 50%;
     cursor: pointer;
+    display: none;
 }
 
-.modal-content form button:hover {
+#back-to-top:hover {
     background-color: #e69500;
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
+nav ul li ul.submenu.open {
+    display: block;
 }
 
-.close:hover {
-    color: #000;
+nav ul li ul.submenu {
+    display: none;
+}
+
+/* Footer estilizado */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-top: 2px solid #444;
+    font-size: 16px;
+    color: #333;
 }
