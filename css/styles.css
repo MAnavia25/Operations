@@ -364,3 +364,20 @@ footer {
 .sub-heads div, .team-members div {
     font-size: 16px;
 }
+
+.section h3 {
+    min-width: 150px;
+    padding: 5px 10px;
+    background-color: #f2f2f2;
+    border-left: 5px solid #FFA500;
+    color: #333;
+    font-weight: bold;
+}
+
+.section div a button {
+    transition: background-color 0.3s ease;
+}
+
+.section div a button:hover {
+    background-color: #e69500;
+}
