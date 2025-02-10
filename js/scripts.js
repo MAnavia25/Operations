@@ -22,6 +22,11 @@ function scrollToTop() {
 document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('fullcalendar-container');
 
+    if (!calendarEl) {
+        console.error('O contêiner do calendário não foi encontrado.');
+        return;
+    }
+
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         headerToolbar: {
@@ -37,8 +42,25 @@ document.addEventListener('DOMContentLoaded', function () {
         ],
         eventClick: function(info) {
             alert('Evento: ' + info.event.title + '\nData: ' + info.event.start.toLocaleDateString());
+        },
+        editable: true,
+        selectable: true,
+        select: function(info) {
+            alert('Selecionado: ' + info.startStr + ' a ' + info.endStr);
         }
     });
 
     calendar.render();
+
+    // Função do botão para abrir o formulário
+    const bookNowButton = document.getElementById('book-now');
+    bookNowButton.addEventListener('click', function () {
+        document.getElementById('booking-form-container').style.display = 'block';
+    });
+
+    // Fechar o formulário
+    const closeButton = document.getElementById('close-form');
+    closeButton.addEventListener('click', function () {
+        document.getElementById('booking-form-container').style.display = 'none';
+    });
 });
