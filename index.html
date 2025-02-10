@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -119,16 +120,39 @@
 </div>
 
 <div class="container">
-    <section class="section" id="links">
-        <h2>Documentation and Quick Access</h2>
-        <ul>
-            <li><a href="https://drive.google.com/YOUR_LINK" target="_blank">Manuals and Procedures</a></li>
-            <li><a href="https://drive.google.com/YOUR_LINK" target="_blank">Previous Flight Reports</a></li>
-        </ul>
-    </section>
+    <section id="fleet-status" class="section">
+    <h2>Fleet Status</h2>
+    <p>Select a system to view its current operational status.</p>
+
+    <label for="fleet-dropdown" style="font-weight: bold;">Select System:</label>
+    <select id="fleet-dropdown" onchange="updateFleetStatus()" style="padding: 10px; font-size: 16px; margin-top: 10px;">
+        <option value="S100">S100</option>
+        <option value="S101">S101</option>
+        <option value="S102">S102</option>
+        <option value="S103">S103</option>
+        <option value="S104">S104</option>
+        <option value="S105">S105</option>
+        <option value="S106">S106</option>
+        <option value="S107">S107</option>
+        <option value="S108">S108</option>
+        <option value="S109">S109</option>
+        <option value="S110">S110</option>
+        <option value="S111">S111</option>
+        <option value="S112">S112</option>
+        <option value="S113">S113</option>
+        <option value="S114">S114</option>
+        <option value="S115">S115</option>
+    </select>
+
+    <div id="status-display" style="margin-top: 20px; font-size: 18px; font-weight: bold;">
+        <!-- The status will be displayed here dynamically -->
+    </div>
+</section>
 </div>
 
-<button id="back-to-top" onclick="scrollToTop()">⬆️</button>
+<button id="back-to-top" onclick="scrollToTop()" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: transparent; border: 2px solid black; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+    <i class="fas fa-arrow-up" style="font-size: 24px; color: black;"></i>
+</button>
 
 <footer>
     <p>&copy; 2025 Operations Department - ANAVIA</p>
