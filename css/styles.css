@@ -88,23 +88,6 @@ nav ul li:hover > ul.submenu {
     margin: 0 auto;
 }
 
-/* Botão "Book Now" */
-.book-now-button {
-    background-color: #FFA500;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.book-now-button:hover {
-    background-color: #e69500;
-}
-
 /* Footer estilizado */
 footer {
     text-align: center;
