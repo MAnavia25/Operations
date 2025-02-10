@@ -57,19 +57,81 @@ nav ul {
     margin-left: auto;
 }
 
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    padding: 10px 15px;
+/* Botão de reserva */
+.book-now-button {
+    background-color: #FFA500;
     color: white;
-    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-/* Mostrar submenu no hover no desktop */
-nav ul li:hover > ul.submenu {
-    display: block;
+.book-now-button:hover {
+    background-color: #e69500;
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 100px auto;
+}
+
+.modal-content h2 {
+    color: #FFA500;
+    margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #FFA500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background-color: #e69500;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
 }
 
 /* Submenu estilo */
@@ -91,64 +153,31 @@ nav ul li ul.submenu li {
     border-bottom: 1px solid #444;
 }
 
-nav ul li ul.submenu li:last-child {
-    border-bottom: none;
-}
-
-nav ul li ul.submenu li a {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-}
-
-nav ul li ul.submenu li a i {
-    margin-right: 8px;
-}
-
-nav ul li ul.submenu li a:hover {
-    background-color: #FFA500;
-}
-
-/* Menu ativo no mobile */
-nav ul.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    height: 100vh;
-    padding: 20px 0;
+/* Footer estilizado */
+footer {
     text-align: center;
-    overflow-y: auto;
-}
-
-/* Estilo para submenus no mobile */
-nav ul.active li ul.submenu {
-    display: none;
-}
-
-nav ul.active li.open > ul.submenu {
-    display: block;
-}
-
-nav ul li {
-    padding: 10px 0;
-}
-
-nav ul li a {
     padding: 10px;
-    font-size: 20px;
+    background-color: #f2f2f2;
+    border-top: 2px solid #444;
+    font-size: 16px;
+    color: #333;
 }
 
-/* Ajuste para links do menu mobile */
-nav ul.active li ul.submenu li {
-    padding: 5px 15px;
+/* Estilo para o calendário */
+.calendar-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-/* Exibir o botão do menu no mobile */
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Ajustes responsivos */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -184,15 +213,6 @@ nav ul.active li ul.submenu li {
     }
 }
 
-/* Ajuste de largura e alinhamento no mobile */
-@media (max-width: 768px) {
-    nav ul.active li ul.submenu {
-        width: 100%;
-        margin-left: 0;
-        padding: 10px;
-    }
-}
-
 @media (max-width: 480px) {
     .logo {
         height: 40px;
@@ -210,54 +230,3 @@ nav ul.active li ul.submenu li {
         padding: 10px;
     }
 }
-
-/* Botão de voltar ao topo */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FFA500;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-}
-
-#back-to-top:hover {
-    background-color: #e69500;
-}
-
-nav ul li ul.submenu.open {
-    display: block;
-}
-
-nav ul li ul.submenu {
-    display: none;
-}
-
-/* Footer estilizado */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border-top: 2px solid #444;
-    font-size: 16px;
-    color: #333;
-}
-
-/* Estilo para o calendário */
-.calendar-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-#calendar {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
