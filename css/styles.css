@@ -32,7 +32,8 @@ header {
 .logo {
     height: 60px;
     padding: 5px;
-    border: none; /* Remove a borda */
+    border: 1px solid #cccccc; /* Borda cinza clara */
+    border-radius: 5px;
     margin-right: 10px;
 }
 
@@ -245,4 +246,28 @@ footer {
     border-top: 2px solid #444;
     font-size: 16px;
     color: #333;
+}
+
+/* Estilo para as seções principais */
+.section {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #FFA500;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #FFA500;
+}
+
+/* Estilo do contêiner do FullCalendar */
+#fullcalendar-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
