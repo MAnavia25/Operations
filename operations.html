@@ -65,6 +65,37 @@
 </header>
 
 <div class="container">
+    <section id="system-description" class="section">
+    <h2>Team Organization Chart</h2>
+    <p>Overview of the operational team structure.</p>
+
+    <div class="org-chart">
+        <!-- Head of Operations -->
+        <div class="level head">
+            <div class="box">Head of Operations</div>
+        </div>
+
+        <!-- Connecting Line -->
+        <div class="connector vertical"></div>
+
+        <!-- Sub-heads -->
+        <div class="level sub-heads">
+            <div class="box">Maintenance Manager</div>
+            <div class="box">Flight Manager</div>
+        </div>
+
+        <!-- Connecting Line -->
+        <div class="connector vertical"></div>
+
+        <!-- Team Members -->
+        <div class="level team-members">
+            <div class="box">Remote Pilot</div>
+            <div class="box">Technician</div>
+            <div class="box">Flight Authorizer</div>
+        </div>
+    </div>
+    </section>
+
     <section id="flight-manual" class="section">
         <h2>Flight Manual</h2>
         <p>This section contains the operational flight manual, including flight procedures, safety measures, and emergency protocols.</p>
@@ -171,7 +202,9 @@
 
 </div>
 
-<button id="back-to-top" onclick="scrollToTop()">⬆️</button>
+<button id="back-to-top" onclick="scrollToTop()" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: transparent; border: 2px solid black; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+    <i class="fas fa-arrow-up" style="font-size: 24px; color: black;"></i>
+</button>
 
 <footer>
     <p>&copy; 2025 Operation Department - ANAVIA</p>
