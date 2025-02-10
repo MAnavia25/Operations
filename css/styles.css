@@ -215,20 +215,24 @@ nav ul.active li ul.submenu li {
 
 /* Botão de voltar ao topo */
 #back-to-top {
+    opacity: 0;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #FFA500;
-    color: white;
-    border: none;
-    padding: 10px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 2px solid black;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    display: none;
+    transition: opacity 0.5s ease;
 }
 
 #back-to-top:hover {
-    background-color: #e69500;
+    background-color: #f2f2f2;
 }
 
 nav ul li ul.submenu.open {
@@ -296,4 +300,67 @@ footer {
 
 .button-link button:hover {
     background-color: #e69500;
+}
+
+#fleet-status select {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#status-display {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Estilo básico das caixas */
+.box {
+    padding: 15px 30px;
+    background-color: #f2f2f2;
+    border: 2px solid #FFA500;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    min-width: 200px;
+}
+
+/* Linhas de conexão */
+.connector {
+    width: 2px;
+    background-color: #FFA500;
+}
+
+.vertical {
+    height: 20px;
+}
+
+/* Níveis do organograma */
+.level {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.sub-heads, .team-members {
+    gap: 40px;
+}
+
+.head {
+    font-size: 18px;
+}
+
+.sub-heads div, .team-members div {
+    font-size: 16px;
 }
