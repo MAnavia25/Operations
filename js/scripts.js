@@ -4,19 +4,20 @@ function toggleMenu() {
 }
 
 // Botão de voltar ao topo
-const backToTopButton = document.getElementById('back-to-top');
-
-window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = "block";
-    } else {
-        backToTopButton.style.display = "none";
-    }
-};
-
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+window.addEventListener('scroll', function () {
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    // Verifica se estamos próximos do final da página
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 100) {
+        backToTopButton.style.opacity = "1";  // Mostra o botão
+    } else {
+        backToTopButton.style.opacity = "0";  // Esconde o botão
+    }
+});
 
 // Inicializa o calendário
 document.addEventListener('DOMContentLoaded', function () {
@@ -64,3 +65,36 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('booking-form-container').style.display = 'none';
     });
 });
+
+// Fleet status data
+const fleetStatus = {
+    "S100": "non-serviceable",
+    "S101": "non-serviceable",
+    "S102": "non-serviceable",
+    "S103": "serviceable",
+    "S104": "non-serviceable",
+    "S105": "non-serviceable",
+    "S106": "non-serviceable",
+    "S107": "serviceable",
+    "S108": "non-serviceable",
+    "S109": "non-serviceable",
+    "S110": "non-serviceable",
+    "S111": "serviceable",
+    "S112": "non-serviceable",
+    "S113": "non-serviceable",
+    "S114": "non-serviceable",
+    "S115": "non-serviceable"
+};
+
+// Function to update fleet status dynamically
+function updateFleetStatus() {
+    const system = document.getElementById('fleet-dropdown').value;
+    const status = fleetStatus[system];
+
+    const statusDisplay = document.getElementById('status-display');
+    if (status === "serviceable") {
+        statusDisplay.innerHTML = `System ${system} is <span style="color: green;">Serviceable</span>`;
+    } else {
+        statusDisplay.innerHTML = `System ${system} is <span style="color: red;">Non-serviceable</span>`;
+    }
+}
