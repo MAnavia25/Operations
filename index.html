@@ -9,12 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <style>
+        .section {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #FFA500;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #FFA500;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <img src="images/Anavia-English-Colour.jpg" alt="ANAVIA Logo" class="logo">
+    <img src="images/logo-anavia-long.png" alt="ANAVIA Logo" class="logo">
     <h1>Operations Department</h1>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
@@ -40,6 +53,24 @@
                     <li><a href="training.html#courses-documents">Courses Documents</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="safety.html"><i class="fas fa-shield-alt"></i> Safety</a>
+                <ul class="submenu">
+                    <li><a href="safety.html#safety-management-manual">Safety Management Manual</a></li>
+                    <li><a href="safety.html#compliance-manual">Compliance Manual</a></li>
+                    <li><a href="safety.html#ftl-policy">FTL Policy</a></li>
+                    <li><a href="safety.html#safety-documents">Safety Documents</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="maintenance.html"><i class="fas fa-wrench"></i> Maintenance</a>
+                <ul class="submenu">
+                    <li><a href="maintenance.html#maintenance-manual">Maintenance Manual</a></li>
+                    <li><a href="maintenance.html#maintenance-logs">Maintenance Logs</a></li>
+                    <li><a href="maintenance.html#configuration-report">Configuration Report</a></li>
+                    <li><a href="maintenance.html#fleet-management">Fleet Management</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>
@@ -48,11 +79,6 @@
     <section class="section" id="info">
         <h2>What the Operations Department Does</h2>
         <p>Our department ensures the safe, efficient, and compliant operation of aircraft, focusing on training, safety, and maintenance to support mission success.</p>
-    </section>
-
-    <section class="calendar-section">
-        <h2>Department Schedule</h2>
-        <div id="calendar"></div>
     </section>
 
     <section class="section" id="links">
@@ -64,76 +90,19 @@
     </section>
 </div>
 
-<!-- Modal do formulário de reserva -->
-<div id="booking-modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeBookingForm()">&times;</span>
-        <h2>Book a Flight</h2>
-        <form id="booking-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="department">Department:</label>
-            <input type="text" id="department" name="department" required>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-
-            <label for="flight-type">Type of Flight:</label>
-            <select id="flight-type" name="flight-type" required>
-                <option value="Demo">Demo</option>
-                <option value="Test">Test</option>
-                <option value="Validation">Validation</option>
-            </select>
-
-            <label for="flight-duration">Flight Duration (hours):</label>
-            <input type="number" id="flight-duration" name="flight-duration" min="1" max="12" required>
-
-            <label for="configuration">Configuration:</label>
-            <input type="text" id="configuration" name="configuration" required>
-
-            <label for="objective">Flight Objective:</label>
-            <textarea id="objective" name="objective" rows="4" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</div>
-
 <button id="back-to-top" onclick="scrollToTop()">⬆️</button>
 
 <footer>
     <p>&copy; 2025 Operations Department - ANAVIA</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
 <script>
     function toggleMenu() {
         document.getElementById('main-menu').classList.toggle('active');
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            events: [
-                { title: 'Flight Operations', start: '2025-02-15' },
-                { title: 'Maintenance Check', start: '2025-02-18' },
-                { title: 'Training Session', start: '2025-02-22' }
-            ]
-        });
-        calendar.render();
-    });
-
-    function openBookingForm() {
-        document.getElementById('booking-modal').style.display = 'block';
-    }
-
-    function closeBookingForm() {
-        document.getElementById('booking-modal').style.display = 'none';
-    }
-
     const backToTopButton = document.getElementById('back-to-top');
+
     window.onscroll = function () {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             backToTopButton.style.display = "block";
