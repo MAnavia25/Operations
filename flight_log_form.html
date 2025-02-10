@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Log Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #000000;
+            padding: 20px;
+        }
+
+        .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+        h2 {
+            color: #FFA500;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select, textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+        button {
+            background-color: #FFA500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e69500;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Flight Log Form</h2>
+        <form action="#" method="post">
+
+    <!-- Seção 1: Informações Iniciais -->
+    <div style="border-bottom: 2px solid #FFA500; padding-bottom: 15px; margin-bottom: 20px;">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="briefing-time">Briefing Time:</label>
+        <input type="time" id="briefing-time" name="briefing-time" required>
+
+        <label for="flight-type">Type of Flight:</label>
+        <select id="flight-type" name="flight-type" required>
+            <option value="demo">Demo</option>
+            <option value="test">Test</option>
+            <option value="validation">Validation</option>
+            <option value="operational">Operational</option>
+            <option value="ground-run">Ground Run</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <select id="location" name="location" required>
+            <option value="Buchs">Buchs</option>
+            <option value="Mollis">Mollis</option>
+            <option value="Gasi">Gasi</option>
+            <option value="Billeton">Billeton</option>
+        </select>
+
+        <label for="weather">Weather:</label>
+        <input type="text" id="weather" name="weather" placeholder="Enter weather conditions" required>
+
+        <label for="density-altitude">Density Altitude:</label>
+        <input type="number" id="density-altitude" name="density-altitude" placeholder="Enter density altitude" required>
+    </div>
+
+    <!-- Seção 2: Informações da Aeronave -->
+    <div style="border-bottom: 2px solid #FFA500; padding-bottom: 15px; margin-bottom: 20px;">
+        <label for="aircraft-number">Aircraft Number:</label>
+        <input type="text" id="aircraft-number" name="aircraft-number" required>
+
+        <label for="engine-number">Engine Number:</label>
+        <input type="text" id="engine-number" name="engine-number" required>
+
+        <label for="gcs-number">GCS Number:</label>
+        <input type="text" id="gcs-number" name="gcs-number" required>
+    </div>
+
+    <!-- Seção 3: Composição da Tripulação -->
+    <div style="border-bottom: 2px solid #FFA500; padding-bottom: 15px; margin-bottom: 20px;">
+        <h3 style="margin-top: 20px; color: #FFA500;">Crew Composition</h3>
+
+        <label for="rpic">RPIC:</label>
+        <input type="text" id="rpic" name="rpic" placeholder="Enter RPIC" required>
+
+        <label for="rp">RP:</label>
+        <input type="text" id="rp" name="rp" placeholder="Enter RP" required>
+
+        <label for="tech">TECH:</label>
+        <input type="text" id="tech" name="tech" placeholder="Enter TECH" required>
+
+        <label for="fath">FATH:</label>
+        <input type="text" id="fath" name="fath" placeholder="Enter FATH" required>
+
+        <label for="obs">OBS:</label>
+        <input type="text" id="obs" name="obs" placeholder="Enter OBS" required>
+    </div>
+
+    <!-- Seção 4: Pesos e Combustível -->
+    <div style="border-bottom: 2px solid #FFA500; padding-bottom: 15px; margin-bottom: 20px;">
+        <label for="empty-weight">Empty Weight (kg):</label>
+        <input type="number" id="empty-weight" name="empty-weight" required>
+
+        <label for="takeoff-weight">Take-off Weight (kg):</label>
+        <input type="number" id="takeoff-weight" name="takeoff-weight" required>
+
+        <label for="fuel-on-board">Fuel on Board (L):</label>
+        <input type="number" id="fuel-on-board" name="fuel-on-board" required>
+
+        <label for="takeoff-time">Take-off Time:</label>
+        <input type="time" id="takeoff-time" name="takeoff-time" required>
+
+        <label for="landing-time">Landing Time:</label>
+        <input type="time" id="landing-time" name="landing-time" required>
+
+        <label for="cycles">Cycles:</label>
+        <input type="number" id="cycles" name="cycles" required>
+
+        <label for="landing-weight">Landing Weight (kg):</label>
+        <input type="number" id="landing-weight" name="landing-weight" required>
+    </div>
+
+    <!-- Seção 5: Observações e Relatório de Ocorrências -->
+    <div>
+        <label for="observations">Observations:</label>
+        <textarea id="observations" name="observations" rows="4" placeholder="Enter observations"></textarea>
+
+        <label for="occurrence-report">Occurrence Report:</label>
+        <textarea id="occurrence-report" name="occurrence-report" rows="4" placeholder="Enter occurrence details"></textarea>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+    <button type="submit" style="padding: 10px 20px; background-color: #FFA500; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit Flight Log</button>
+    <button type="button" onclick="window.location.href='operations.html';" style="padding: 10px 20px; background-color: #cccccc; color: black; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Back to Operations</button>
+</div>
+        </form>
+    </div>
+
+</body>
+</html>
